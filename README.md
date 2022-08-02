@@ -16,4 +16,6 @@ This is a Backend project of a Rest API with access to the database, it was deve
 <img src="https://img.shields.io/badge/Maven-v2.8.6-orange"/>
 <img src="https://img.shields.io/badge/MySQL-v8.0.21-blue"/>
 
+<p>Logical layers:</p>
 
+![Captura de tela de 2022-08-02 13-19-22](https://user-images.githubusercontent.com/93044961/182448393-738d9496-f81d-471e-bb70-4adb10160746.png)
