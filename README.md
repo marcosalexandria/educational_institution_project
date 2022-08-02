@@ -19,3 +19,10 @@ This is a Backend project of a Rest API with access to the database, it was deve
 <p>Logical layers:</p>
 
 ![Captura de tela de 2022-08-02 13-19-22](https://user-images.githubusercontent.com/93044961/182448393-738d9496-f81d-471e-bb70-4adb10160746.png)
+
+<p>
+The system contains an entire ecosystem for the verification of the most diverse details such as the address of people and teaching units, the courses that a student is enrolled or that a teacher takes, the subjects that a course has or the units that contain a particular course.</p>
+
+<p>Class diagram containing the structure and relationships of classes.</p>
+
+![Diagrama (1) drawio](https://user-images.githubusercontent.com/93044961/182449215-a15e4a57-a8fd-4fe1-ad38-2a93667004bb.png)
