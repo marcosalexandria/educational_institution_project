@@ -6,6 +6,9 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class Person extends AbstractPersistable<Long> {
     private String name;
@@ -19,6 +22,10 @@ public class Person extends AbstractPersistable<Long> {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
     private Address address;
+
+    @ManyToMany
+    @JoinTable(name = "tb_person_course", joinColumns = @JoinColumn(name = "person_id"), inverseJoinColumns = @JoinColumn(name = "course_id"))
+    private List<Course> courseList = new ArrayList<>();
 
     public Person() {
     }
@@ -87,5 +94,13 @@ public class Person extends AbstractPersistable<Long> {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public List<Course> getCourseList() {
+        return courseList;
+    }
+
+    public void setCourseList(List<Course> courseList) {
+        this.courseList = courseList;
     }
 }

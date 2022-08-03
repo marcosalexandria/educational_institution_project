@@ -1,11 +1,11 @@
 package com.example.project.domain.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Unity extends AbstractPersistable<Long> {
@@ -13,6 +13,9 @@ public class Unity extends AbstractPersistable<Long> {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
     private Address address;
+    @JsonIgnore
+    @ManyToMany(mappedBy = "unityList")
+    private List<Course> courseList = new ArrayList<>();
 
     public Unity() {
     }
@@ -36,5 +39,13 @@ public class Unity extends AbstractPersistable<Long> {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public List<Course> getCourseList() {
+        return courseList;
+    }
+
+    public void setCourseList(List<Course> courseList) {
+        this.courseList = courseList;
     }
 }
