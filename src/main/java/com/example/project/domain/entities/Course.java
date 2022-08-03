@@ -21,6 +21,10 @@ public class Course extends AbstractPersistable<Long> {
     @JoinTable(name = "tb_course_unity", joinColumns = @JoinColumn(name = "course_id"), inverseJoinColumns = @JoinColumn(name = "unity_id"))
     private List<Unity> unityList = new ArrayList<>();
 
+    @ManyToMany
+    @JoinTable(name = "tb_course_matter", joinColumns = @JoinColumn(name = "course_id"), inverseJoinColumns = @JoinColumn(name = "matter_id"))
+    private List<Matter> matters = new ArrayList<>();
+
     public Course() {
     }
 
@@ -29,6 +33,11 @@ public class Course extends AbstractPersistable<Long> {
         this.loadInHours = loadinHours;
         this.durationYears = durationYears;
         this.monthlyPrice = monthlyPrice;
+    }
+
+    private Double getTotalInvestment() {
+        Double sum = monthlyPrice * 12 * durationYears;
+        return sum;
     }
 
     public String getName() {
@@ -77,5 +86,13 @@ public class Course extends AbstractPersistable<Long> {
 
     public void setUnityList(List<Unity> unityList) {
         this.unityList = unityList;
+    }
+
+    public List<Matter> getMatters() {
+        return matters;
+    }
+
+    public void setMatters(List<Matter> matters) {
+        this.matters = matters;
     }
 }
