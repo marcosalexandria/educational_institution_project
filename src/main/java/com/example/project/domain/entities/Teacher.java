@@ -3,8 +3,9 @@ package com.example.project.domain.entities;
 import com.example.project.domain.entities.enums.Function;
 import com.example.project.domain.entities.enums.Sex;
 
+import javax.persistence.Entity;
 import java.time.LocalDate;
-
+@Entity
 public class Teacher extends Person{
     private Double remuneration;
     private LocalDate admissionDate;

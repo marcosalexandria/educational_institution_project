@@ -4,8 +4,9 @@ import com.example.project.domain.entities.enums.Function;
 import com.example.project.domain.entities.enums.Sex;
 import com.example.project.domain.entities.enums.StudentStatus;
 
+import javax.persistence.Entity;
 import java.time.LocalDate;
-
+@Entity
 public class Student extends Person{
     private StudentStatus status;
 

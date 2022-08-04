@@ -3,12 +3,13 @@ package com.example.project.domain.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
+import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import java.util.ArrayList;
 import java.util.List;
-
+@Entity
 public class Course extends AbstractPersistable<Long> {
     private String name;
     private Double loadInHours;
