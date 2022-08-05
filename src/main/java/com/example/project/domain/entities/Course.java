@@ -18,8 +18,8 @@ public class Course extends AbstractPersistable<Long> {
     @JsonIgnore
     @ManyToMany(mappedBy = "courseList")
     private List<Person> personList = new ArrayList<>();
-    @ManyToMany
-    @JoinTable(name = "tb_course_unity", joinColumns = @JoinColumn(name = "course_id"), inverseJoinColumns = @JoinColumn(name = "unity_id"))
+    @JsonIgnore
+    @ManyToMany(mappedBy = "courseList")
     private List<Unity> unityList = new ArrayList<>();
 
     @ManyToMany

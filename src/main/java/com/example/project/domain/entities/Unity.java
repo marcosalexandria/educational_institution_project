@@ -13,8 +13,10 @@ public class Unity extends AbstractPersistable<Long> {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
     private Address address;
-    @JsonIgnore
-    @ManyToMany(mappedBy = "unityList")
+    @ManyToMany
+    @JoinTable(name = "tb_unity_course"
+            , joinColumns = @JoinColumn(name = "unity_id")
+            , inverseJoinColumns = @JoinColumn(name = "course_id"))
     private List<Course> courseList = new ArrayList<>();
 
     public Unity() {

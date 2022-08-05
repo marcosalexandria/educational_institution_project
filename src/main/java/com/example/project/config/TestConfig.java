@@ -58,15 +58,7 @@ public class TestConfig implements CommandLineRunner {
 
         Matter m1 = new Matter("Banco de Dados", 6.7, 8.0);
 
-
-        unityRepository.save(u1);
-        unityRepository.save(u2);
-
         matterRepository.save(m1);
-
-        c1.getUnityList().add(u1);
-        c1.getUnityList().add(u2);
-
 
         c1.getMatters().add(m1);
         c2.getMatters().add(m1);
@@ -75,6 +67,13 @@ public class TestConfig implements CommandLineRunner {
         courseRepository.save(c2);
         courseRepository.save(c3);
 
+        u1.getCourseList().add(c1);
+        u1.getCourseList().add(c2);
+        u2.getCourseList().add(c1);
+        u2.getCourseList().add(c3);
+
+        unityRepository.save(u1);
+        unityRepository.save(u2);
 
         p1.getCourseList().add(c1);
         p2.getCourseList().add(c2);
