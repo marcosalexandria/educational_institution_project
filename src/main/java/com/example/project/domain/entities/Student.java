@@ -5,9 +5,12 @@ import com.example.project.domain.entities.enums.Sex;
 import com.example.project.domain.entities.enums.StudentStatus;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.time.LocalDate;
 @Entity
 public class Student extends Person{
+    @Enumerated(EnumType.STRING)
     private StudentStatus status;
 
     public Student() {

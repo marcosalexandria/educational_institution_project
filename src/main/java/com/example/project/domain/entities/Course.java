@@ -36,11 +36,6 @@ public class Course extends AbstractPersistable<Long> {
         this.monthlyPrice = monthlyPrice;
     }
 
-    private Double getTotalInvestment() {
-        Double sum = monthlyPrice * 12 * durationYears;
-        return sum;
-    }
-
     public String getName() {
         return name;
     }
@@ -95,5 +90,10 @@ public class Course extends AbstractPersistable<Long> {
 
     public void setMatters(List<Matter> matters) {
         this.matters = matters;
+    }
+
+    public Double getTotalInvestment(){
+        Double total = monthlyPrice * 12 * durationYears;
+        return Math.floor(total);
     }
 }
