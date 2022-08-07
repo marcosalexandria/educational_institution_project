@@ -52,6 +52,7 @@ public class TestConfig implements CommandLineRunner {
         Unity u1 = new Unity("Umarizal", au1);
         Unity u2 = new Unity("Centro", au2);
 
+
         Course c1 = new Course("Analise de Sistemas", 1200.0, 2.0, 135.95);
         Course c2 = new Course("Engenharia de Software", 2400.0, 4.0, 390.00);
         Course c3 = new Course("Administração", 4400.0, 4.0, 255.95);
@@ -82,6 +83,9 @@ public class TestConfig implements CommandLineRunner {
         p4.getCourseList().add(c2);
         p5.getCourseList().add(c3);
 
+        p1.getPreferentialUnity().add(u1);
+        p2.getPreferentialUnity().add(u1);
+        p3.getPreferentialUnity().add(u2);
 
         personRepository.save(p1);
         personRepository.save(p2);

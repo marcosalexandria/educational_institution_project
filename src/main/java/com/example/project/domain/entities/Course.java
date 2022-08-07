@@ -18,7 +18,6 @@ public class Course extends AbstractPersistable<Long> {
     @JsonIgnore
     @ManyToMany(mappedBy = "courseList")
     private List<Person> personList = new ArrayList<>();
-    @JsonIgnore
     @ManyToMany(mappedBy = "courseList")
     private List<Unity> unityList = new ArrayList<>();
 

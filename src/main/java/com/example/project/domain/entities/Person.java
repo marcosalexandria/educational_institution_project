@@ -27,6 +27,10 @@ public class Person extends AbstractPersistable<Long> {
     @JoinTable(name = "tb_person_course", joinColumns = @JoinColumn(name = "person_id"), inverseJoinColumns = @JoinColumn(name = "course_id"))
     private List<Course> courseList = new ArrayList<>();
 
+    @ManyToMany
+    @JoinTable(name = "tb_person_unity", joinColumns = @JoinColumn(name = "person_id"), inverseJoinColumns = @JoinColumn(name = "unity_id"))
+    private List<Unity> preferentialUnity = new ArrayList<>();
+
     public Person() {
     }
 
@@ -102,5 +106,13 @@ public class Person extends AbstractPersistable<Long> {
 
     public void setCourseList(List<Course> courseList) {
         this.courseList = courseList;
+    }
+
+    public List<Unity> getPreferentialUnity() {
+        return preferentialUnity;
+    }
+
+    public void setPreferentialUnity(List<Unity> preferentialUnity) {
+        this.preferentialUnity = preferentialUnity;
     }
 }
